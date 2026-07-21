@@ -1,0 +1,9 @@
+{
+  "name": "revealjs-de-an",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Reveal.js presentation scaffold based on the local template",
+  "scripts": {
+    "start": "python3 -m http.server 8000"
+  }
+}
