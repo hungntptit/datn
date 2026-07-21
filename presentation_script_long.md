@@ -56,7 +56,7 @@ Bài toán được mô hình hóa dưới dạng trò chơi Markov hợp tác n
 
 Sau mỗi 5 giây mô phỏng, môi trường đọc trạng thái giao thông từ SUMO và tạo quan sát cho từng tác tử. Quan sát cơ sở có 8 thành phần: hàng đợi vào, số xe đang di chuyển vào, hàng đợi ra, áp lực cục bộ, mức tăng thời gian chờ, giai đoạn xanh hiện tại, thời gian đã qua trong giai đoạn và khả năng chuyển pha. Trong đó, hàng đợi vào là PCU của xe dừng chờ trên làn tiếp cận; số xe đang di chuyển vào là PCU của xe vẫn chạy trên các làn đó. Áp lực cục bộ so sánh tổng lưu lượng đi vào với tổng lưu lượng trên các làn thoát.
 
-Với các biến thể dùng GAT, đầu vào được bổ sung một đặc trưng liên quan đến cấu hình pha đèn, nên mỗi nút có vector đặc trưng 9 chiều. GAT dùng toàn bộ các vector này cùng quan hệ lân cận giữa các nút để tổng hợp thông tin không gian.
+Các biến thể dùng GAT khai thác quan hệ lân cận giữa các nút để tổng hợp thông tin không gian.
 
 Về hành động, tác tử có thể duy trì giai đoạn xanh hiện tại hoặc yêu cầu chuyển sang giai đoạn xanh kế tiếp. Phần tiếp theo giải thích cách môi trường giới hạn các yêu cầu chuyển pha này.
 

@@ -42,7 +42,7 @@ Kịch bản thực nghiệm được xây dựng cho khu vực Thanh Xuân, Hà
 ## 6. Mô hình bài toán (3:50 - 4:50)
 
 **Lời nói:**  
-Bài toán được mô hình hóa dưới dạng trò chơi Markov hợp tác. Sau mỗi 5 giây mô phỏng, môi trường đọc trạng thái giao thông từ SUMO và tạo vector quan sát cho từng tác tử. Vector quan sát cơ sở gồm 8 thành phần, như hàng đợi, số xe đang di chuyển, áp lực giao thông, thời gian chờ và trạng thái giai đoạn xanh hiện tại. Với các biến thể dùng GAT, đầu vào được bổ sung thêm một đặc trưng liên quan đến cấu hình pha đèn, nên có 9 chiều. Tác tử có thể duy trì giai đoạn xanh hiện tại hoặc yêu cầu chuyển sang giai đoạn xanh kế tiếp. Slide sau trình bày rõ hơn phần thưởng và ràng buộc khi thực thi hành động.
+Bài toán được mô hình hóa dưới dạng trò chơi Markov hợp tác. Sau mỗi 5 giây mô phỏng, môi trường đọc trạng thái giao thông từ SUMO và tạo vector quan sát cho từng tác tử. Vector quan sát cơ sở gồm 8 thành phần, như hàng đợi, số xe đang di chuyển, áp lực giao thông, thời gian chờ và trạng thái giai đoạn xanh hiện tại. Tác tử có thể duy trì giai đoạn xanh hiện tại hoặc yêu cầu chuyển sang giai đoạn xanh kế tiếp. Slide sau trình bày rõ hơn phần thưởng và ràng buộc khi thực thi hành động.
 
 ---
 
