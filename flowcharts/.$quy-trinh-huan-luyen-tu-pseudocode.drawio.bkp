@@ -1,0 +1,107 @@
+<mxfile host="Electron" agent="Codex">
+  <diagram id="training-from-pseudocode" name="Vòng lặp huấn luyện">
+    <mxGraphModel dx="1414" dy="851" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="episodeStart" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#edf3fb;strokeColor=#315d96;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;b&gt;Bắt đầu&lt;/b&gt;&lt;div&gt;&lt;b&gt;lần mô phỏng&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="70" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="observation" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fbeeee;strokeColor=#bb2025;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;div&gt;&lt;b&gt;Tạo quan sát cho 41 tác tử&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;và lọc hành động&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="205" x="732.5" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="actorCritic" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fbeeee;strokeColor=#bb2025;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;div&gt;&lt;b&gt;Actor chọn hành động&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Critic ước lượng giá trị&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="90" width="190" x="740" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="sumo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fbeeee;strokeColor=#bb2025;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;b&gt;Thực thi trong SUMO&lt;/b&gt;&lt;br&gt;5 giây mô phỏng" vertex="1">
+          <mxGeometry height="70" width="190" x="740" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="reward" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fbeeee;strokeColor=#bb2025;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;div&gt;&lt;b&gt;Tính phần thưởng&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;và lưu dữ liệu tương tác&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="70" width="185" x="742.5" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="bufferDecision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4db;strokeColor=#c98516;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;div&gt;&lt;b&gt;Đủ số bước cập nhật&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;hoặc lần mô phỏng kết thúc?&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="190" x="740" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="update" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#edf7f0;strokeColor=#2c6b58;fontSize=16;align=center;verticalAlign=middle;fontStyle=1;strokeWidth=1;" value="Tính GAE&lt;br&gt;Cập nhật chính sách bằng PPO" vertex="1">
+          <mxGeometry height="75" width="225" x="328.75" y="737.5" as="geometry" />
+        </mxCell>
+        <mxCell id="doneDecision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4db;strokeColor=#c98516;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;b&gt;Lần mô phỏng&lt;/b&gt;&lt;div&gt;&lt;b&gt;&amp;nbsp;kết thúc?&lt;/b&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="177.5" x="352.5" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="countDecision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff4db;strokeColor=#c98516;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;b&gt;Đủ số&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;b&gt;lần mô phỏng&lt;/b&gt;&lt;div&gt;&lt;b&gt;?&lt;/b&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="110" width="200" x="60" y="495" as="geometry" />
+        </mxCell>
+        <mxCell id="final" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f6f0e6;strokeColor=#9a6a22;fontSize=16;align=center;verticalAlign=middle;strokeWidth=1;" value="&lt;b&gt;Lưu mô hình cuối cùng&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="205" x="57.5" y="747.5" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="episodeStart" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;" target="observation">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="240" />
+              <mxPoint x="490" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="observation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;" target="actorCritic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="actorCritic" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;" target="sumo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="sumo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;" target="reward">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="reward" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;" target="bufferDecision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="bufferDecision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;fontStyle=1;labelBackgroundColor=#ffffff;" target="update" value="Có">
+          <mxGeometry relative="1" x="0.0275" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="510" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="bufferDecision" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);dashed=1;fontSize=16;fontStyle=1;labelBackgroundColor=#ffffff;" target="observation" value="Chưa">
+          <mxGeometry relative="1" x="-0.4038" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1000" y="800" />
+              <mxPoint x="1000" y="255" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="update" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;" target="doneDecision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="doneDecision" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;fontStyle=1;labelBackgroundColor=#ffffff;dashed=1;" target="observation" value="Chưa">
+          <mxGeometry relative="1" x="-0.7333" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="440" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="doneDecision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;fontStyle=1;labelBackgroundColor=#ffffff;" target="countDecision" value="Có">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="countDecision" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);dashed=1;fontSize=16;fontStyle=1;labelBackgroundColor=#ffffff;" target="episodeStart" value="Chưa">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="530" />
+              <mxPoint x="160" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="countDecision" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=light-dark(#1f1f1f, #ff989d);fontSize=16;fontStyle=1;labelBackgroundColor=#ffffff;" target="final" value="Có">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="160" y="720" />
+              <mxPoint x="160" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

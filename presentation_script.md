@@ -60,7 +60,7 @@ Việc huấn luyện dùng kịch bản Thanh Xuân UTM ở mức nhu cầu 5.0
 
 ## 10. Quy trình huấn luyện (7:40 - 8:30)
 **Lời nói:**  
-Slide này mô tả riêng luồng huấn luyện. Trong mỗi bước quyết định, SUMO cung cấp trạng thái giao thông cho môi trường. Từ đó, môi trường tạo quan sát cho 41 tác tử và áp dụng bộ lọc để loại các hành động không hợp lệ. Chính sách sau đó chọn hành động, SUMO thực thi trong 5 giây mô phỏng, rồi môi trường tính phần thưởng và lưu dữ liệu vào bộ đệm. Khi bộ đệm đủ 128 bước, hoặc khi một lần mô phỏng kết thúc, hệ thống tính lợi thế bằng GAE và cập nhật chính sách bằng PPO. Quy trình này được lặp lại qua các lần mô phỏng cho đến khi hoàn thành quá trình huấn luyện.
+Slide này mô tả vòng lặp huấn luyện. Mỗi lần mô phỏng bắt đầu bằng việc khởi tạo SUMO. Môi trường tạo quan sát cho 41 tác tử và lọc các hành động không hợp lệ. Actor chọn hành động, còn critic ước lượng giá trị trạng thái. SUMO sau đó mô phỏng thêm 5 giây; môi trường tính phần thưởng và lưu dữ liệu vào rollout. Khi đã đủ dữ liệu cập nhật hoặc lần mô phỏng kết thúc, GAE và PPO cập nhật actor cùng critic. Nếu lần mô phỏng chưa kết thúc, quy trình quay lại bước tạo quan sát; nếu đã kết thúc, hệ thống bắt đầu lần mô phỏng tiếp theo cho đến khi đủ 500 lần.
 
 ---
 
